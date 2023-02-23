@@ -6,7 +6,7 @@ package main.solutions;
         url = "https://leetcode.com/problems/maximum-average-subarray-i/description/",
         difficulty = Difficulty.EASY
 )
-public class MaximumAverageSubarray1 {
+public class MaximumAverageSubarrayI {
     public static double findMaxAverage(int[] nums, int k) {
 
         double maxAvg = 0;
