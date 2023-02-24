@@ -1,5 +1,8 @@
 package main.solutions;
 
+import main.common.Difficulty;
+import main.common.LeetCode;
+
 import java.util.HashMap;
 import java.util.Map;
 
