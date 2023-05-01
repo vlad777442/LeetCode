@@ -18,15 +18,14 @@ public class FloodFill {
                         {1,1,0},
                         {1,0,1}};
         int sr = 1, sc = 1, color = 2;
-        int[][] arr = floodFill(image, sr, sc, color);
-    }
-    public static int[][] floodFill(int[][] image, int sr, int sc, int color) {
-        int[][] res = breadthFirstSearch(image, sr, sc, color);
+        int[][] res = floodFill(image, sr, sc, color);
         for (int i = 0; i < res.length; i++) {
             for (int j = 0; j < res[0].length; j++)
                 System.out.print(res[i][j] + " ");
             System.out.println();
         }
+    }
+    public static int[][] floodFill(int[][] image, int sr, int sc, int color) {
         return breadthFirstSearch(image, sr, sc, color);
     }
 
