@@ -26,7 +26,11 @@ public class FloodFill {
         }
     }
     public static int[][] floodFill(int[][] image, int sr, int sc, int color) {
-        return breadthFirstSearch(image, sr, sc, color);
+        if (image[sr][sc] == color) return image;
+
+//        return breadthFirstSearch(image, sr, sc, color);
+        depthFirstSearch(image, sr, sc, image[sr][sc], color);
+        return image;
     }
 
     public static class Pair {
@@ -81,5 +85,14 @@ public class FloodFill {
         if (visited[row][col])
             return false;
         return true;
+    }
+
+    public static int[] directions = {0, 1, 0, -1, 0};
+    public static void depthFirstSearch(int[][] image, int r, int c, int oldColor, int newColor) {
+        if (r < 0 || c < 0 || r == image.length || c == image[0].length || image[r][c] != oldColor) return;
+        image[r][c] = newColor;
+        for (int i = 0; i < 4; i++) {
+            depthFirstSearch(image, r + directions[i], c + directions[i + 1], oldColor, newColor);
+        }
     }
 }
